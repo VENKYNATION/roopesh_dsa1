@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Shortlist Portal - Login/Signup</title>
+    <!-- Assuming a style.css exists in the same directory for aesthetics -->
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f4f8; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); width: 100%; max-width: 400px; }
+        h2 { color: #333; text-align: center; margin-bottom: 25px; border-bottom: 2px solid #5cb85c; padding-bottom: 10px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        input[type="text"], input[type="password"], select { width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+        input[type="submit"] { background-color: #5cb85c; color: white; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; width: 100%; transition: background-color 0.3s; }
+        input[type="submit"]:hover { background-color: #4cae4c; }
+        .radio-group label { display: inline-block; margin-right: 15px; font-weight: normal; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Resume Shortlist Portal</h2>
+        <form method="post" action="/cgi-bin/login.cgi">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="role">I am a:</label>
+            <select id="role" name="role" required>
+                <option value="">Select role</option>
+                <option value="employee">Employee</option>
+                <option value="hr">HR</option>
+            </select>
+
+            <div class="radio-group">
+                <input type="radio" id="login" name="action" value="login" checked>
+                <label for="login">Login</label>
+                <input type="radio" id="signup" name="action" value="signup">
+                <label for="signup">Signup</label>
+            </div>
+            <br>
+            <input type="submit" value="Proceed">
+        </form>
+    </div>
+</body>
+</html>

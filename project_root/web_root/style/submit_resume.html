@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Resumes - Shortlisting Tool</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f4f8; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); }
+        h2 { color: #333; border-bottom: 2px solid #5cb85c; padding-bottom: 10px; margin-bottom: 25px; }
+        textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; resize: vertical; font-size: 14px; }
+        input[type="submit"] { background-color: #007bff; color: white; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; width: 100%; transition: background-color 0.3s; }
+        input[type="submit"]:hover { background-color: #0056b3; }
+        p { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Submit 5 Resumes for Shortlisting</h2>
+        <p>Enter each resume in the format: <strong>Name;Experience (years);Skill1, Skill2, Skill3, ...</strong></p>
+        <p style="color: #a94442; font-weight: bold;">Example: Jane Doe;4;C programming, DSA, Python, Linux</p>
+
+        <form method="post" action="/cgi-bin/shortlist.cgi">
+            <textarea name="resume1" rows="2" placeholder="Resume 1: Name;Experience;Skills" required></textarea>
+            <textarea name="resume2" rows="2" placeholder="Resume 2: Name;Experience;Skills" required></textarea>
+            <textarea name="resume3" rows="2" placeholder="Resume 3: Name;Experience;Skills" required></textarea>
+            <textarea name="resume4" rows="2" placeholder="Resume 4: Name;Experience;Skills" required></textarea>
+            <textarea name="resume5" rows="2" placeholder="Resume 5: Name;Experience;Skills" required></textarea>
+            <input type="submit" value="Shortlist Resumes">
+        </form>
+        <p><a href="hr_bashboard.html">$\leftarrow$ Back to Dashboard</a> | <a href="index.html">Logout</a></p>
+    </div>
+</body>
+</html>
