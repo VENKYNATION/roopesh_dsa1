@@ -1,0 +1,81 @@
+{
+  "name": "Inspection",
+  "type": "object",
+  "properties": {
+    "batch_number": {
+      "type": "string",
+      "description": "Production batch identifier"
+    },
+    "equipment_id": {
+      "type": "string",
+      "description": "Equipment/line identifier"
+    },
+    "station": {
+      "type": "string",
+      "description": "Inspection station location"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "in_progress",
+        "completed",
+        "failed",
+        "review_required"
+      ],
+      "default": "completed"
+    },
+    "quality_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Overall quality score (0-100)"
+    },
+    "defect_count": {
+      "type": "integer",
+      "default": 0,
+      "description": "Total number of defects detected"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Primary inspection image URL"
+    },
+    "thumbnail_url": {
+      "type": "string",
+      "description": "Thumbnail image URL"
+    },
+    "duration_seconds": {
+      "type": "number",
+      "description": "Inspection duration in seconds"
+    },
+    "operator": {
+      "type": "string",
+      "description": "Operator who performed inspection"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional inspection notes"
+    },
+    "temperature": {
+      "type": "number",
+      "description": "Process temperature during inspection"
+    },
+    "pressure": {
+      "type": "number",
+      "description": "Process pressure during inspection"
+    },
+    "speed": {
+      "type": "number",
+      "description": "Production line speed"
+    },
+    "humidity": {
+      "type": "number",
+      "description": "Environmental humidity percentage"
+    }
+  },
+  "required": [
+    "batch_number",
+    "equipment_id",
+    "status",
+    "quality_score"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "name": "Report",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Report title"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "daily_summary",
+        "weekly_quality",
+        "monthly_analysis",
+        "defect_analysis",
+        "equipment_performance",
+        "custom"
+      ],
+      "description": "Report type"
+    },
+    "date_from": {
+      "type": "string",
+      "format": "date",
+      "description": "Report period start date"
+    },
+    "date_to": {
+      "type": "string",
+      "format": "date",
+      "description": "Report period end date"
+    },
+    "content": {
+      "type": "string",
+      "description": "Report content (markdown or HTML)"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Executive summary"
+    },
+    "total_inspections": {
+      "type": "integer",
+      "description": "Total inspections in period"
+    },
+    "total_defects": {
+      "type": "integer",
+      "description": "Total defects detected"
+    },
+    "average_quality_score": {
+      "type": "number",
+      "description": "Average quality score"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "Generated report file URL"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "generating",
+        "completed",
+        "failed"
+      ],
+      "default": "completed"
+    }
+  },
+  "required": [
+    "title",
+    "type",
+    "date_from",
+    "date_to"
+  ]
+}

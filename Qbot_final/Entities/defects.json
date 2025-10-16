@@ -1,0 +1,79 @@
+{
+  "name": "Defect",
+  "type": "object",
+  "properties": {
+    "inspection_id": {
+      "type": "string",
+      "description": "Reference to parent inspection"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "surface_scratch",
+        "dent",
+        "discoloration",
+        "crack",
+        "contamination",
+        "dimensional_error",
+        "incomplete_assembly",
+        "burr",
+        "void",
+        "misalignment",
+        "other"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "critical",
+        "major",
+        "minor"
+      ],
+      "description": "Defect severity level"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "AI detection confidence (0-100)"
+    },
+    "location_x": {
+      "type": "number",
+      "description": "X coordinate of defect center"
+    },
+    "location_y": {
+      "type": "number",
+      "description": "Y coordinate of defect center"
+    },
+    "width": {
+      "type": "number",
+      "description": "Defect bounding box width"
+    },
+    "height": {
+      "type": "number",
+      "description": "Defect bounding box height"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed defect description"
+    },
+    "root_cause": {
+      "type": "string",
+      "description": "Identified or suspected root cause"
+    },
+    "corrective_action": {
+      "type": "string",
+      "description": "Recommended corrective action"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Cropped defect image URL"
+    }
+  },
+  "required": [
+    "inspection_id",
+    "type",
+    "severity",
+    "confidence"
+  ]
+}

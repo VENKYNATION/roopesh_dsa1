@@ -1,0 +1,66 @@
+{
+  "name": "Equipment",
+  "type": "object",
+  "properties": {
+    "equipment_code": {
+      "type": "string",
+      "description": "Unique equipment identifier"
+    },
+    "name": {
+      "type": "string",
+      "description": "Equipment name"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "assembly_line",
+        "welding_station",
+        "painting_booth",
+        "packaging_line",
+        "cnc_machine",
+        "inspection_station"
+      ],
+      "description": "Equipment type"
+    },
+    "location": {
+      "type": "string",
+      "description": "Physical location in facility"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "operational",
+        "maintenance",
+        "offline",
+        "error"
+      ],
+      "default": "operational"
+    },
+    "last_maintenance": {
+      "type": "string",
+      "format": "date",
+      "description": "Last maintenance date"
+    },
+    "next_maintenance": {
+      "type": "string",
+      "format": "date",
+      "description": "Scheduled next maintenance"
+    },
+    "uptime_percentage": {
+      "type": "number",
+      "description": "Equipment uptime percentage"
+    },
+    "total_inspections": {
+      "type": "integer",
+      "default": 0,
+      "description": "Total inspections performed"
+    }
+  },
+  "required": [
+    "equipment_code",
+    "name",
+    "type",
+    "location",
+    "status"
+  ]
+}
